@@ -16,6 +16,10 @@
 
     &_subtitle {
         text-align: center;
+        font-size: map-get(v.$font-sizes, "body");
+        font-weight: map-get(v.$font-weights, "regular");
+        color: v.$black;
+        line-height: 2.8rem;
     }
 }
 
