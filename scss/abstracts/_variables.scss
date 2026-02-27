@@ -1,10 +1,10 @@
 //typography
 $font-base: 'Poppins', sans-serif;
 $font-sizes: (
-    body-sm: 1.6rem,
-    body: 1.8rem,
-    heading: 4.2rem,
-    title: 4.8rem
+    body-sm: clamp(1.4rem, calc(1.4rem + (1.6 - 1.4) * ((100vw - 32rem) / 112)), 1.6rem),
+    body: clamp(1.6rem,calc(1.6rem + (1.8 - 1.6) * ((100vw - 32rem) / 112)),1.8rem),
+    heading: clamp(2.8rem,calc(2.8rem + (4.2 - 2.8) * ((100vw - 32rem) / 112)),4.2rem),
+    title: clamp(3.2rem,calc(3.2rem + (4.8 - 3.2) * ((100vw - 32rem) / 112)),4.8rem)
 );
 
 $font-weights: (

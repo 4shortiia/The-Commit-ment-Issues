@@ -20,12 +20,11 @@ li {
 .btn-light-primary,
 .btn-light-secondary, .btn-primary,
 .btn-secondary {
-  height: 5.4rem;
   display: inline-block;
   border-radius: 0.8rem;
-  padding: 1.5rem 4.3rem;
+  padding: clamp(0.8rem, 0.8rem + 0.7 * (100vw - 32rem) / 112, 1.5rem) clamp(1.2rem, 1.2rem + 3.1 * (100vw - 32rem) / 112, 4.3rem);
   font-family: "Poppins", sans-serif;
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem, 1.4rem + 0.2 * (100vw - 32rem) / 112, 1.6rem);
   font-weight: 600;
   border: none;
   cursor: pointer;
@@ -51,11 +50,13 @@ li {
 
 .btn-primary,
 .btn-light-primary {
-  width: 17.9rem;
+  height: clamp(3.7rem, 3.7rem + 1.7 * (100vw - 32rem) / 112, 5.4rem);
+  width: clamp(10.5rem, 10.5rem + 7.4 * (100vw - 32rem) / 112, 17.9rem);
 }
 
 .btn-secondary,
 .btn-light-secondary {
+  height: 5.4rem;
   width: 17.6rem;
 }
 
@@ -106,6 +107,11 @@ li {
 }
 .card_icon img {
   width: 2.3rem;
+}
+
+.container {
+  margin: 0 auto;
+  width: clamp(27.2rem, 27.2rem + 96.8 * (100vw - 32rem) / 112, 124rem);
 }
 
 /*# sourceMappingURL=styles.css.map */
