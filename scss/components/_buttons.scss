@@ -1,0 +1,42 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+@use "sass:map";
+
+%btn {
+    height:5.4rem;
+    display:inline-block;
+    border-radius:v.$radius-md;
+    padding:1.5rem 4.3rem;
+    font-family:v.$font-base;
+    font-size:map.get(v.$font-sizes,body-sm);
+    font-weight:map.get(v.$font-weights,semibold);
+    border:none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.btn-primary,
+.btn-secondary {
+  @extend %btn;
+  @include m.theme(v.$primary);
+}
+
+.btn-light-primary,
+.btn-light-secondary {
+  @extend %btn;
+  @include m.theme(v.$white);
+}
+
+.btn-primary,
+.btn-light-primary {
+  width: 17.9rem;
+}
+
+.btn-secondary,
+.btn-light-secondary {
+  width: 17.6rem;
+}
