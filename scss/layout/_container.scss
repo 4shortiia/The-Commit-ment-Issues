@@ -1,10 +1,9 @@
 .container {
-  max-width: 124rem; 
-  margin:3.2rem 2.4rem; 
-} 
+  margin: 0 auto;
+  width: clamp(
+  27.2rem,
+  calc(27.2rem + (124 - 27.2) * ((100vw - 32rem) / (144 - 32))),
+  124rem
+);
 
-@media (min-width: 992px) { 
-  .container { 
-    margin:0 10rem; 
-  } 
 }
