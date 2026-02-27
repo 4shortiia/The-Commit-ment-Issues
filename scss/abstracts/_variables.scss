@@ -1,0 +1,31 @@
+//typography
+$font-base: 'Poppins', sans-serif;
+$font-sizes: (
+    body-sm: 1.6rem,
+    body: 1.8rem,
+    heading: 4.2rem,
+    title: 4.8rem
+);
+
+$font-weights: (
+    regular:400,
+    medium:500,
+    semibold:600,
+    bold:700
+);
+
+// Colors
+$white:#FFFFFF;
+$black:#000000;
+$dark: #1E2A39;
+$primary:#052A44;
+$accent-primary:#E8DB84;
+$accent-secondary:#183B56;
+
+$text-primary:$black;
+$text-secondary:$accent-secondary;
+$background:$white;
+
+//border radius
+$radius-round:50%;
+$radius-md:0.8rem;
