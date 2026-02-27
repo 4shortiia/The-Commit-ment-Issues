@@ -1,0 +1,10 @@
+@use "sass:color";
+@use "./variables" as v;
+
+@function set-text-color($bg-color) {
+  @if (color.channel($bg-color, "lightness", $space: hsl) > 70) {
+    @return v.$black;
+  } @else {
+    @return v.$white;
+  }
+}
