@@ -6,15 +6,6 @@
   color: f.set-text-color($bg-color);
 }
 
-@mixin container{
-    margin:0 auto;
-    display:flex;
-    align-items:center;
-    max-width:124rem;
-    width:100%;
-    margin-bottom:8rem;
-}
-
 @mixin icons {
     border-radius:v.$radius-round;
 }

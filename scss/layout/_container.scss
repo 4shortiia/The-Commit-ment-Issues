@@ -1,0 +1,8 @@
+.container {
+  margin: 0 auto;
+  width: clamp(
+  27.2rem,
+  calc(27.2rem + (124 - 27.2) * ((100vw - 32rem) / (144 - 32))),
+  124rem
+);
+}
