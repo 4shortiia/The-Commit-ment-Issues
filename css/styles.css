@@ -60,18 +60,15 @@ li {
   width: 17.6rem;
 }
 
-.container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 3.2rem 2.4rem;
-}
-
 .about-us {
   background-color: #FFFFFF;
 }
 .about-us_title {
   margin-bottom: 2.6rem;
   text-align: center;
+  font-size: clamp(2.8rem, 2.8rem + 1.4 * (100vw - 32rem) / 112, 4.2rem);
+  font-weight: 400;
+  color: #183B56;
 }
 .about-us_subtitle {
   text-align: center;
@@ -110,8 +107,14 @@ li {
 }
 
 .container {
-  margin: 0 auto;
-  width: clamp(27.2rem, 27.2rem + 96.8 * (100vw - 32rem) / 112, 124rem);
+  max-width: 124rem;
+  margin: 3.2rem 2.4rem;
+}
+
+@media (min-width: 992px) {
+  .container {
+    margin: 0 10rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
