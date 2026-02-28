@@ -1,6 +1,7 @@
 @use "../abstracts/functions" as f;
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
+@use "sass:map";
 
 .about-us {
     background-color: v.$white;
@@ -8,26 +9,20 @@
     &_title {
         margin-bottom: 2.6rem;
         text-align: center;
-        font-size: map-get(v.$font-sizes, "heading");
-        font-weight: map-get(v.$font-weights, "regular");
-        color: v.$accent-secondary;
+        @include m.section-title;
 
         @media (min-width: 992px) {
             margin-top: 8rem;
-            font-size: map-get(v.$font-sizes, "heading");
-            font-weight: map-get(v.$font-weights, "semibold");
         }
     }
 
     &_subtitle {
         text-align: center;
-        font-size: map-get(v.$font-sizes, "body-sm");
-        font-weight: map-get(v.$font-weights, "regular");
-        color: v.$accent-dark;
+        @include m.section-subtitle($color: v.$accent-dark);
         line-height: 2.8rem;
 
         @media (min-width: 992px) {
-            font-size: map-get(v.$font-sizes, "body");
+            font-size: map.get(v.$font-sizes, "body");
             margin-top: 1.6rem;
         }
     }
@@ -59,6 +54,7 @@
             height: 12.9rem;
             border: 0.6rem solid v.$primary;
             border-radius: 50%;
+            background-color: transparent;
             position: absolute;
             top: 30rem;
             left: -3rem;
@@ -74,7 +70,7 @@
             &:hover {
                 animation-play-state: running;
                 -webkit-animation-play-state: running;
-                z-index: 5;
+                border: 0.6rem solid #0f9cff;
             }
         }
     }
@@ -158,8 +154,8 @@
         gap: 1.5rem;
 
         h3 {
-            font-size: map-get(v.$font-sizes, "body");
-            font-weight: map-get(v.$font-weights, "semibold");
+            font-size: map.get(v.$font-sizes, "body");
+            font-weight: map.get(v.$font-weights, "semibold");
             line-height: 1rem;
             color: v.$black;
 
@@ -170,8 +166,8 @@
         }
 
         p {
-            font-size: map-get(v.$font-sizes, "body-sm");
-            font-weight: map-get(v.$font-weights, "regular");
+            font-size: map.get(v.$font-sizes, "body-sm");
+            font-weight: map.get(v.$font-weights, "regular");
             line-height: 2.8rem;
             color: v.$accent-dark;
 
