@@ -1,33 +1,25 @@
-@use "../abstracts/functions" as f;
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
+@use "sass:map";
 
 .about-us {
     background-color: v.$white;
 
     &_title {
+        @include m.section-title;
         margin-bottom: 2.6rem;
-        text-align: center;
-        font-size: map-get(v.$font-sizes, "heading");
-        font-weight: map-get(v.$font-weights, "regular");
-        color: v.$accent-secondary;
 
-        @media (min-width: 992px) {
+        @media (min-width: v.$bp-desktop) {
             margin-top: 8rem;
-            font-size: map-get(v.$font-sizes, "heading");
-            font-weight: map-get(v.$font-weights, "semibold");
         }
     }
 
     &_subtitle {
+        @include m.section-subtitle(v.$accent-dark);
         text-align: center;
-        font-size: map-get(v.$font-sizes, "body-sm");
-        font-weight: map-get(v.$font-weights, "regular");
-        color: v.$accent-dark;
         line-height: 2.8rem;
 
-        @media (min-width: 992px) {
-            font-size: map-get(v.$font-sizes, "body");
+        @media (min-width: v.$bp-desktop) {
             margin-top: 1.6rem;
         }
     }
@@ -42,7 +34,7 @@
     @include m.flex-center;
     position: relative;
 
-    @media (min-width: 992px) {
+    @media (min-width: v.$bp-desktop) {
         & {
             flex-direction: row;
             justify-content: space-between;
@@ -51,14 +43,14 @@
         }
     }
 
-    &_eclipse {
+        &_eclipse {
         display: none;
-        @media (min-width: 992px) {
+        @media (min-width: v.$bp-desktop) {
             display: block;
             width: 12.9rem;
             height: 12.9rem;
             border: 0.6rem solid v.$primary;
-            border-radius: 50%;
+            border-radius: v.$radius-round;
             position: absolute;
             top: 30rem;
             left: -3rem;
@@ -111,7 +103,7 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
 
-    @media (min-width: 992px) {
+    @media (min-width: v.$bp-desktop) {
         width: 37.1rem;
         height: 27.3rem;
 
@@ -129,12 +121,12 @@
         width: 6rem;
         height: 6rem;
         background-color: v.$primary;
-        border-radius: 50%;
+        border-radius: v.$radius-round;
         display: flex;
         align-items: center;
         justify-content: center;
 
-        @media (min-width: 992px) {
+        @media (min-width: v.$bp-desktop) {
             width: 7rem;
             height: 7rem;
         }
@@ -143,7 +135,7 @@
             width: 1.7rem;
             height: 2.3rem;
 
-            @media (min-width: 992px) {
+            @media (min-width: v.$bp-desktop) {
                 width: 2.3rem;
                 height: 3.3rem;
             }
@@ -158,24 +150,24 @@
         gap: 1.5rem;
 
         h3 {
-            font-size: map-get(v.$font-sizes, "body");
-            font-weight: map-get(v.$font-weights, "semibold");
+            font-size: map.get(v.$font-sizes, body);
+            font-weight: map.get(v.$font-weights, semibold);
             line-height: 1rem;
             color: v.$black;
 
-            @media (min-width: 992px) {
+            @media (min-width: v.$bp-desktop) {
                 font-size: 2.2rem;
                 margin-top: 3rem;
             }
         }
 
         p {
-            font-size: map-get(v.$font-sizes, "body-sm");
-            font-weight: map-get(v.$font-weights, "regular");
+            font-size: map.get(v.$font-sizes, body-sm);
+            font-weight: map.get(v.$font-weights, regular);
             line-height: 2.8rem;
             color: v.$accent-dark;
 
-            @media (min-width: 992px) {
+            @media (min-width: v.$bp-desktop) {
                 margin-top: 1.5rem;
             }
         }

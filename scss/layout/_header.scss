@@ -9,23 +9,62 @@
 
     .container {
         @include m.flex-center(row, space-between, center, left);
-        flex-wrap: wrap;
-        gap: 1.6rem;
+        flex-wrap: nowrap;
     }
 
     &_logo {
-        font-size: map.get(v.$font-sizes, heading);
-        font-weight: map.get(v.$font-weights, bold);
-        color: v.$primary;
         flex-shrink: 0;
+
+        img {
+            display: block;
+            height: 3.2rem;
+            width: auto;
+        }
+    }
+
+    // Mobile: dark-light + burger icons
+    &_icons {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+
+        @media (min-width: v.$bp-desktop) {
+            display: none;
+        }
+    }
+
+    &_icon {
+        padding: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        img {
+            display: block;
+            width: v.$header-icon-size;
+            height: v.$header-icon-size;
+            object-fit: contain;
+        }
+    }
+
+    &_icon--theme {
+        display: block;
+        cursor: default;
+        width: 3.2rem;
+        height: 3.2rem;
+        min-width: 3.2rem;
+        min-height: 3.2rem;
+        object-fit: contain;
+        // თეთრი მთვარე შავ ფონზე - თეთრ ჰედერზე ხილულობისთვის ინვერტირება
+        filter: invert(1);
     }
 
     &_nav {
-        flex: 1;
-        display: flex;
-        justify-content: center;
+        display: none;
 
-        @media (min-width: 992px) {
+        @media (min-width: v.$bp-desktop) {
+            display: flex;
+            flex: 1;
             justify-content: flex-start;
         }
     }
@@ -34,8 +73,6 @@
         display: flex;
         align-items: center;
         gap: 2.4rem;
-        flex-wrap: wrap;
-        justify-content: center;
     }
 
     &_link {
@@ -49,8 +86,12 @@
     }
 
     &_actions {
-        display: flex;
-        align-items: center;
-        gap: 1.6rem;
+        display: none;
+
+        @media (min-width: v.$bp-desktop) {
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+        }
     }
 }
