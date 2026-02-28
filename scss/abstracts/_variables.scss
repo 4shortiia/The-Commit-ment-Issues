@@ -1,31 +1,48 @@
 //typography
-$font-base: 'Poppins', sans-serif;
+$font-base: "Poppins", sans-serif;
 $font-sizes: (
-    body-sm: clamp(1.4rem, calc(1.4rem + (1.6 - 1.4) * ((100vw - 32rem) / 112)), 1.6rem),
-    body: clamp(1.6rem,calc(1.6rem + (1.8 - 1.6) * ((100vw - 32rem) / 112)),1.8rem),
-    heading: clamp(2.8rem,calc(2.8rem + (4.2 - 2.8) * ((100vw - 32rem) / 112)),4.2rem),
-    title: clamp(3.2rem,calc(3.2rem + (4.8 - 3.2) * ((100vw - 32rem) / 112)),4.8rem)
+    body-sm: clamp(
+            1.4rem,
+            calc(1.4rem + (1.6 - 1.4) * ((100vw - 32rem) / 112)),
+            1.6rem
+        ),
+    body: clamp(
+            1.6rem,
+            calc(1.6rem + (1.8 - 1.6) * ((100vw - 32rem) / 112)),
+            1.8rem
+        ),
+    heading: clamp(
+            2.8rem,
+            calc(2.8rem + (4.2 - 2.8) * ((100vw - 32rem) / 112)),
+            4.2rem
+        ),
+    title: clamp(
+            3.2rem,
+            calc(3.2rem + (4.8 - 3.2) * ((100vw - 32rem) / 112)),
+            4.8rem
+        ),
 );
 
 $font-weights: (
-    regular:400,
-    medium:500,
-    semibold:600,
-    bold:700
+    regular: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
 );
 
 // Colors
-$white:#FFFFFF;
-$black:#000000;
-$dark: #1E2A39;
-$primary:#052A44;
-$accent-primary:#E8DB84;
-$accent-secondary:#183B56;
+$white: #ffffff;
+$black: #000000;
+$dark: #1e2a39;
+$primary: #052a44;
+$accent-primary: #e8db84;
+$accent-secondary: #183b56;
+$accent-dark: #071210;
 
-$text-primary:$black;
-$text-secondary:$accent-secondary;
-$background:$white;
+$text-primary: $black;
+$text-secondary: $accent-secondary;
+$background: $white;
 
 //border radius
-$radius-round:50%;
-$radius-md:0.8rem;
+$radius-round: 50%;
+$radius-md: 0.8rem;
