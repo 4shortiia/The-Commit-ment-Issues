@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "./functions" as f;
 @use "./variables" as v;
 
@@ -24,19 +25,19 @@
 }
 
 @mixin section-title {
-  text-align: center;
-  font-size: map-get(v.$font-sizes, heading);
-  font-weight: map-get(v.$font-weights, regular);
-  color: v.$accent-secondary;
+    text-align: center;
+    font-size: map.get(v.$font-sizes, heading);
+    font-weight: map.get(v.$font-weights, regular);
+    color: v.$accent-secondary;
 
-  @media (min-width:v.$bp-desktop) {
-    font-weight: map-get(v.$font-weights, semibold);
-    color: v.$text-primary;
-  }
+    @media (min-width: v.$bp-desktop) {
+        font-weight: map.get(v.$font-weights, semibold);
+        color: v.$text-primary;
+    }
 }
 
-@mixin section-subtitle ($color:v.$text-primary) {
-    font-size:map-get(v.$font-sizes,body);
-    font-weight: map-get(v.$font-weights,regular);
-    color:$color;
+@mixin section-subtitle($color: v.$text-primary) {
+    font-size: map.get(v.$font-sizes, body);
+    font-weight: map.get(v.$font-weights, regular);
+    color: $color;
 }
