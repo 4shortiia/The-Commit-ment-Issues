@@ -2,10 +2,23 @@
 @use "./variables" as v;
 
 @mixin theme($bg-color) {
-  background-color: $bg-color;
-  color: f.set-text-color($bg-color);
+    background-color: $bg-color;
+    color: f.set-text-color($bg-color);
 }
 
 @mixin icons {
-    border-radius:v.$radius-round;
+    border-radius: v.$radius-round;
+}
+
+@mixin flex-center(
+    $direction: column,
+    $justify: center,
+    $align: center,
+    $text: center
+) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    text-align: $text;
 }
