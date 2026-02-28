@@ -40,6 +40,7 @@
 
 .card-section {
     @include m.flex-center;
+    position: relative;
 
     @media (min-width: 992px) {
         & {
@@ -48,6 +49,43 @@
             gap: 2.4rem;
             margin-top: 4rem;
         }
+    }
+
+    &_eclipse {
+        display: none;
+        @media (min-width: 992px) {
+            display: block;
+            width: 12.9rem;
+            height: 12.9rem;
+            border: 0.6rem solid v.$primary;
+            border-radius: 50%;
+            position: absolute;
+            top: 30rem;
+            left: -3rem;
+            z-index: 1;
+            transform: rotate(-15deg);
+            cursor: pointer;
+
+            animation-name: Spin;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+            &:hover {
+                animation-play-state: running;
+                -webkit-animation-play-state: running;
+                z-index: 5;
+            }
+        }
+    }
+}
+
+@keyframes Spin {
+    0% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(345deg);
     }
 }
 
@@ -62,10 +100,25 @@
     padding-top: 5rem;
     padding-inline: 3rem;
     position: relative;
+    z-index: 2;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-1rem);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
 
     @media (min-width: 992px) {
         width: 37.1rem;
         height: 27.3rem;
+
+        &:hover {
+            transform: translateY(-1rem);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
     }
 
     &_icon {
