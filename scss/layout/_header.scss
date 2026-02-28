@@ -1,0 +1,56 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "sass:map";
+
+.header {
+    background-color: v.$white;
+    padding: 2rem 0;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.05);
+
+    .container {
+        @include m.flex-center(row, space-between, center, left);
+        flex-wrap: wrap;
+        gap: 1.6rem;
+    }
+
+    &_logo {
+        font-size: map.get(v.$font-sizes, heading);
+        font-weight: map.get(v.$font-weights, bold);
+        color: v.$primary;
+        flex-shrink: 0;
+    }
+
+    &_nav {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+
+        @media (min-width: 992px) {
+            justify-content: flex-start;
+        }
+    }
+
+    &_list {
+        display: flex;
+        align-items: center;
+        gap: 2.4rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &_link {
+        font-size: map.get(v.$font-sizes, body-sm);
+        font-weight: map.get(v.$font-weights, medium);
+        color: v.$text-primary;
+
+        &:hover {
+            color: v.$accent-secondary;
+        }
+    }
+
+    &_actions {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+    }
+}
