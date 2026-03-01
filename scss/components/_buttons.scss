@@ -8,7 +8,6 @@
     padding:clamp(0.8rem,calc(0.8rem + (1.5 - 0.8) * ((100vw - 32rem) / 112)),1.5rem) clamp(1.2rem,calc(1.2rem + (4.3 - 1.2) * ((100vw - 32rem) / 112)),4.3rem);
     font-family:v.$font-base;
     font-size:map.get(v.$font-sizes,body-sm);
-    font-weight:map.get(v.$font-weights,semibold);
     border:none;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -40,4 +39,11 @@
 .btn-light-secondary {
   height: 5.4rem;
   width: 17.6rem;
+}
+
+.btn-primary, .btn-light-primary, .btn-secondary, .btn-light-secondary{
+  font-weight: map.get(v.$font-weights, regular);
+  @media (min-width:v.$bp-desktop){
+  font-weight:map.get(v.$font-weights,semibold);
+  }
 }
