@@ -1,1 +1,55 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "sass:map";
 
+.services {
+    background-color: v.$accent-primary;
+    border-radius: 1rem;
+    padding: 2.4rem 1.3rem 0 1.3rem;
+
+    &_title {
+        margin-bottom: 1.6rem;
+        text-align: center;
+        @include m.section-title;
+
+        @media (min-width: 992px) {
+            margin-top: 8rem;
+        }
+    }
+
+    &_subtitle {
+        text-align: center;
+        @include m.section-subtitle($color: v.$black);
+        line-height: 2.8rem;
+
+        @media (min-width: 992px) {
+            font-size: map.get(v.$font-sizes, "body");
+            margin-top: 1.6rem;
+        }
+    }
+}
+
+.services-info {
+    width: 25.2rem;
+    height: 15.4rem;
+    margin: 2.4rem 0 2rem 0;
+}
+
+.info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+    font-size: map.get(v.$font-sizes, "body-sm");
+    color: v.$black;
+
+    &_icon {
+        width: 3.8rem;
+        height: 3.8rem;
+        background-color: v.$white;
+        border-radius: 50%;
+        @include m.flex-center($direction: row, $text: left);
+    }
+}
