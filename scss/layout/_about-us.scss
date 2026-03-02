@@ -4,7 +4,14 @@
 @use "sass:map";
 
 .about-us {
-    background-color: v.$white;
+    background-color: v.$background;
+
+    @media (min-width: 992px) {
+        margin-left: 3.95rem;
+        margin-right: 3.95rem;
+        max-width: 124rem;
+        margin: 0 auto;
+    }
 
     &_title {
         margin-bottom: 2.6rem;
@@ -30,6 +37,10 @@
     &_btn {
         @include m.flex-center;
         margin-top: 2.5rem;
+
+        @media (min-width: 992px) {
+            margin-top: 6rem;
+        }
     }
 }
 
@@ -40,9 +51,8 @@
     @media (min-width: 992px) {
         & {
             flex-direction: row;
-            justify-content: space-between;
-            gap: 2.4rem;
             margin-top: 4rem;
+            gap: 2.4rem;
         }
     }
 
@@ -61,12 +71,7 @@
             z-index: 1;
             transform: rotate(-15deg);
             cursor: pointer;
-
-            animation-name: Spin;
-            animation-duration: 5s;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-
+            animation: Spin 5s linear infinite;
             &:hover {
                 animation-play-state: running;
                 -webkit-animation-play-state: running;
