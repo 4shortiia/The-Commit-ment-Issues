@@ -4,20 +4,25 @@
 @use "sass:map";
 
 .about-us {
-    background-color: v.$background;
+    padding: 0 2.4rem;
+    @media (min-width: v.$bp-desktop) {
+        padding: 0 10rem;
+    }
 
-    @media (min-width: 992px) {
-        margin-left: 3.95rem;
-        margin-right: 3.95rem;
-        max-width: 124rem;
-        margin: 0 auto;
+    .container {
+        background-color: v.$white;
+        padding: 2.4rem 0;
+        border-radius: 1rem;
+        @media (min-width: v.$bp-desktop) {
+            padding: 4rem 3.2rem;
+            border-radius: 2.9rem;
+        }
     }
 
     &_title {
         margin-bottom: 2.6rem;
         text-align: center;
         @include m.section-title;
-
         @media (min-width: 992px) {
             margin-top: 8rem;
         }
@@ -47,12 +52,15 @@
 .card-section {
     @include m.flex-center;
     position: relative;
+    width: 100%;
+    flex-direction: column;
 
     @media (min-width: 992px) {
         & {
             flex-direction: row;
             margin-top: 4rem;
             gap: 2.4rem;
+            max-width: 124rem;
         }
     }
 
@@ -92,8 +100,11 @@
 
 .card {
     @include m.flex-center($justify: flex-start);
-    width: 26.4rem;
-    height: 24.3rem;
+    // max-width: 26.4rem;
+    min-height: 24.3rem;
+    // width: 100%;
+    flex-shrink: 1;
+    height: auto;
     background-color: v.$white;
     box-shadow: 0.142rem 0.285rem 2.704rem rgba(0, 0, 0, 0.08);
     border-radius: 1.139rem;
@@ -113,8 +124,8 @@
     }
 
     @media (min-width: 992px) {
-        width: 37.1rem;
-        height: 27.3rem;
+        max-width: 37.1rem;
+        min-height: 27.3rem;
 
         &:hover {
             transform: translateY(-1rem);

@@ -4,25 +4,39 @@
 @use "sass:map";
 
 .services {
-    background-color: v.$accent-primary;
-    border-radius: 1rem;
-    height: 78rem;
-    max-width: 28rem;
-    margin: 0 auto;
+    padding: 0 2.4rem;
 
-    @media (min-width: 992px) {
-        max-width: 114rem;
-        width: 100%;
-        height: 59.8rem;
-        border-radius: 2.9rem;
-        margin: 0 auto;
-        margin-top: 8rem;
+    @media (min-width: v.$bp-desktop) {
+        padding: 0 10rem;
+    }
+
+    .container {
+        background-color: v.$accent-primary;
+        padding: 2.4rem 0;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        @media (min-width: v.$bp-desktop) {
+            padding: 4rem 3.2rem;
+            border-radius: 2.9rem;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
     }
 
     &_wrapper {
-        width: 25.2rem;
-        height: 22.4rem;
+        width: 100%;
         padding-right: 1.8rem;
+        max-width: 55rem;
+        margin: 0 auto;
+        @include m.flex-center(
+            $direction: column,
+            $justify: center,
+            $align: center,
+            $text: center
+        );
 
         @media (min-width: 992px) {
             @include m.flex-center(
@@ -31,11 +45,9 @@
                 $align: flex-start,
                 $text: left
             );
-            max-width: 124rem;
             width: 100%;
-            width: 51.5rem;
-
-            margin-left: 52rem;
+            max-width: 51.5rem;
+            margin: 0;
         }
     }
 
@@ -44,7 +56,6 @@
         @include m.section-title;
 
         @media (min-width: 992px) {
-            margin-top: 4rem;
             text-align: left;
         }
     }
@@ -67,18 +78,20 @@
         margin-top: 32rem;
 
         @media (min-width: 992px) {
-            margin-top: 8rem;
+            margin-top: 2rem;
         }
     }
 }
 
 .services-info {
-    width: 25.2rem;
-    height: 15.4rem;
     margin-top: 1.4rem;
+    margin-left: 1.3rem;
 
     @media (min-width: 992px) {
-        margin-top: 2.4rem;
+        margin-top: 1.4rem;
+        width: 100%;
+        width: 51.5rem;
+        margin-left: 0rem;
     }
 }
 
