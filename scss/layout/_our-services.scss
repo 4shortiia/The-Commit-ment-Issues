@@ -188,15 +188,6 @@
         bottom: 35rem;
         z-index: 2;
         overflow: hidden;
-        transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease;
-        cursor: pointer;
-
-        &:hover {
-            transform: translateY(-1rem);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
 
         @media (min-width: 992px) {
             position: absolute;
@@ -208,11 +199,6 @@
             border-radius: 1.264rem;
             width: 46.2rem;
             height: 47.4rem;
-
-            &:hover {
-                transform: translateY(-1rem);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-            }
         }
     }
 
