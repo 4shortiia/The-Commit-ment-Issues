@@ -5,6 +5,14 @@
 @use "./section";
 
 .reviews{
+    padding:0 2.4rem;
+    @media (min-width:v.$bp-desktop){
+        padding: 0 10rem;
+    }
+    .container{
+        padding:0;
+    }
+
     h2 {
         @include m.section-title;
         margin-bottom: 1.6rem;

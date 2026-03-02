@@ -4,6 +4,11 @@
 @use "./section";
 
 .contact {  
+    padding:0 2.4rem;
+    @media (min-width:v.$bp-desktop){
+        padding: 0 10rem;
+    }
+    
     .container{
         background-color:v.$accent-primary;
         padding:2.4rem 0;
