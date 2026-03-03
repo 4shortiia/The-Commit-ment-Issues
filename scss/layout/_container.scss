@@ -3,11 +3,14 @@
 
 .container {
     max-width: 124rem;
-    margin: 3.2rem 2.4rem;
+    width: 100%;
+    padding: 3.2rem 2.4rem;
+    margin: 0 auto;
 }
 
 @media (min-width: v.$bp-desktop) {
     .container {
-        margin: 0 10rem;
+        margin: 0 auto;
+        padding: 0 10rem;
     }
 }

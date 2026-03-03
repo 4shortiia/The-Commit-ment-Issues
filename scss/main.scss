@@ -1,13 +1,22 @@
-// Main entry: 7-1 pattern - abstracts, base, components, layout
+// 1. Abstracts
 @use "./abstracts/variables";
 @use "./abstracts/functions";
 @use "./abstracts/mixins";
+
+// 2. Base & Reset
 @use "./base/reset";
+@use "./layout/container";
+@use "./layout/section";
+
+// 3. Components
 @use "./components/buttons";
+
+// 4. Layout
 @use "./layout/header";
 @use "./layout/hero";
 @use "./layout/about-us";
 @use "./layout/our-services";
 @use "./layout/stories";
 @use "./layout/reviews";
-@use "./layout/container";
+@use "./layout/contact";
+@use "./layout/footer";
