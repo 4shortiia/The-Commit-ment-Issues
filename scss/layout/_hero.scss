@@ -1,3 +1,5 @@
+// Hero section: CareerPathNow, CTA, cards, yellow bg + image
+// Mobile-first: 272x500 container, 252x231 media, 61.91x48.15 cards
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
 @use "sass:map";
@@ -9,6 +11,7 @@
     .container {
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 272px;
         min-height: 500px;
         gap: 24px;
@@ -22,36 +25,63 @@
         }
     }
 
+    // Text block: title, subtitle, CTA buttons. 272x245px mobile, gap 14px
     &_content {
         order: 1;
+        width: 272px;
+        height: 245px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+
+        @media (min-width: v.$bp-desktop) {
+            width: auto;
+            height: auto;
+            align-items: flex-start;
+            text-align: left;
+            gap: 1.6rem;
+        }
     }
 
     &_title {
         font-size: map.get(v.$font-sizes, title);
         font-weight: map.get(v.$font-weights, bold);
         color: v.$primary;
-        margin-bottom: 1.6rem;
     }
 
     &_subtitle {
-        font-size: map.get(v.$font-sizes, body);
-        font-weight: map.get(v.$font-weights, regular);
+        font-family: v.$font-base;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0;
+        text-align: center;
         color: v.$text-primary;
-        line-height: 1.6;
-        margin-bottom: 2.4rem;
+
+        @media (min-width: v.$bp-desktop) {
+            font-size: map.get(v.$font-sizes, body);
+            text-align: left;
+        }
     }
 
     &_actions {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        justify-content: center;
         gap: 1.6rem;
+
+        @media (min-width: v.$bp-desktop) {
+            justify-content: flex-start;
+        }
     }
 
     &_learn-more {
         display: inline-flex;
         align-items: center;
-        gap: 0.8rem;
+        gap: 10px;
         font-size: map.get(v.$font-sizes, body-sm);
         font-weight: map.get(v.$font-weights, semibold);
         color: v.$primary;
@@ -65,13 +95,17 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 4rem;
-        height: 4rem;
-        border: 0.2rem solid v.$primary;
-        border-radius: v.$radius-round;
+        width: 36px;
+        height: 36px;
+        padding: 10px 18px 18px 10px;
+        background: #ffffff;
+        box-shadow: 2px -2px 38px 0 rgba(0, 0, 0, 0.08);
+        border-radius: 100px;
         font-size: 1.2rem;
+        box-sizing: border-box;
     }
 
+    // Media block: cards + yellow bg + person image (252x231 mobile)
     &_media {
         order: 2;
         position: relative;
@@ -92,6 +126,7 @@
         }
     }
 
+    // Overlay cards: absolute left on mobile, flex on desktop
     &_cards {
         display: flex;
         flex-direction: column;
@@ -114,6 +149,7 @@
         }
     }
 
+    // Single card: 61.91x48.15px mobile, Avenir typography
     &_card {
         width: 61.91px;
         height: 48.15px;
@@ -141,6 +177,7 @@
         }
     }
 
+    // "Our Happy Users" - 5.54px, weight 700
     &_card_label {
         display: block;
         font-family: v.$font-hero-card;
@@ -162,6 +199,7 @@
         }
     }
 
+    // "200+ Online User", "Member Joined" - 4.43px | "27K" -large 5.54px
     &_card_value {
         font-family: v.$font-hero-card;
         font-weight: 350;
@@ -256,6 +294,7 @@
         }
     }
 
+    // Yellow background: Frame 988.png, 217.56x175.42, top 25.8, left 35.26
     &_image-bg {
         position: absolute;
         top: 25.8px;
@@ -277,6 +316,7 @@
         }
     }
 
+    // Person with tablet: Images.png, right-bottom aligned
     &_image {
         position: absolute;
         right: 0;

@@ -13,15 +13,19 @@
         <link rel="stylesheet" href="./css/styles.css" />
     </head>
     <body>
+        <!-- Header: logo, burger menu (mobile), nav (desktop). CSS-only toggle via checkbox -->
+        <input type="checkbox" id="header-menu-toggle" class="header_menu-toggle" aria-hidden="true" />
         <header class="header">
-            <div class="container">
+            <div class="container header_bar">
                 <a href="#" class="header_logo"><img src="./assets/Logo.png" alt="Logo" /></a>
+                <!-- Mobile: dark-light + burger (opens menu) -->
                 <div class="header_icons">
                     <img src="./assets/dark-light.png" alt="Theme" class="header_icon header_icon--theme" />
-                    <button type="button" class="header_icon header_icon--burger" aria-label="Open menu">
+                    <label for="header-menu-toggle" class="header_icon header_icon--burger" aria-label="Open menu">
                         <img src="./assets/Shape.png" alt="" />
-                    </button>
+                    </label>
                 </div>
+                <!-- Desktop: navigation links -->
                 <nav class="header_nav">
                     <ul class="header_list">
                         <li><a href="#home" class="header_link">Home</a></li>
@@ -30,16 +34,38 @@
                         <li><a href="#contact" class="header_link">Contact</a></li>
                     </ul>
                 </nav>
+                <!-- Desktop: Sign In, Free Trial -->
                 <div class="header_actions">
                     <img src="./assets/dark-light.png" alt="Theme" class="header_icon header_icon--theme" />
                     <a href="#sign-in" class="header_link">Sign In</a>
                     <a href="#free-trial" class="btn-primary">Free Trial</a>
                 </div>
             </div>
+            <!-- Mobile: burger menu overlay (Home, About US, Services, Contact, Sign In, Free Trial) -->
+            <div class="header_overlay">
+                <div class="header_overlay-header">
+                    <a href="#" class="header_logo"><img src="./assets/Logo.png" alt="Logo" /></a>
+                    <label for="header-menu-toggle" class="header_icon header_icon--close" aria-label="Close menu">
+                        <span class="header_close-icon"></span>
+                    </label>
+                </div>
+                <nav class="header_overlay-nav">
+                    <ul class="header_overlay-list">
+                        <li><a href="#home" class="header_overlay-link">Home</a></li>
+                        <li><a href="#about-us" class="header_overlay-link">About US</a></li>
+                        <li><a href="#services" class="header_overlay-link">Services</a></li>
+                        <li><a href="#contact" class="header_overlay-link">Contact</a></li>
+                    </ul>
+                    <a href="#sign-in" class="header_overlay-link">Sign In</a>
+                    <a href="#free-trial" class="btn-primary header_overlay-btn">Free Trial</a>
+                </nav>
+            </div>
         </header>
         <main>
+            <!-- Hero: CareerPathNow, CTA buttons, cards (Our Happy Users, 27K), yellow bg + person image -->
             <section class="hero" id="home">
                 <div class="container">
+                    <!-- Hero text + buttons -->
                     <div class="hero_content">
                         <h1 class="hero_title">CareerPathNow</h1>
                         <p class="hero_subtitle">
@@ -53,7 +79,9 @@
                             </a>
                         </div>
                     </div>
+                    <!-- Hero media: cards overlay + yellow bg (Frame 988) + Images.png -->
                     <div class="hero_media">
+                        <!-- Stats cards: Our Happy Users, 27K Member Joined -->
                         <div class="hero_cards">
                             <div class="hero_card hero_card--users">
                                 <span class="hero_card_label">Our Happy Users</span>
@@ -66,23 +94,24 @@
                                 <span class="hero_card_value hero_card_value--large">27K</span>
                                 <span class="hero_card_label">Member Joined</span>
                                 <div class="hero_card_avatars">
-                                    <img src="./assets/members/Ellipse 1869.png" alt="memeber photo" />
-                                    <img src="./assets/members/Ellipse 1871.png" alt="memeber photo" />
-                                    <img src="./assets/members/Ellipse 1873.png" alt="memeber photo" />
-                                    <img src="./assets/members/Group 5.png" alt="memeber photo" />
+                                    <img src="./assets/members/Ellipse 1869.png" alt="Member photo" />
+                                    <img src="./assets/members/Ellipse 1871.png" alt="Member photo" />
+                                    <img src="./assets/members/Ellipse 1873.png" alt="Member photo" />
+                                    <img src="./assets/members/Group 5.png" alt="Member photo" />
                                 </div>
                             </div>
                             <div class="hero_card">
                                 <span class="hero_card_value hero_card_value--large">27K</span>
                                 <span class="hero_card_label">Member Joined</span>
                                 <div class="hero_card_avatars">
-                                    <img src="./assets/members/Ellipse 1869.png" alt="memeber photo" />
-                                    <img src="./assets/members/Ellipse 1871.png" alt="memeber photo" />
-                                    <img src="./assets/members/Ellipse 1873.png" alt="memeber photo" />
-                                    <img src="./assets/members/Group 5.png" alt="memeber photo" />
+                                    <img src="./assets/members/Ellipse 1869.png" alt="Member photo" />
+                                    <img src="./assets/members/Ellipse 1871.png" alt="Member photo" />
+                                    <img src="./assets/members/Ellipse 1873.png" alt="Member photo" />
+                                    <img src="./assets/members/Group 5.png" alt="Member photo" />
                                 </div>
                             </div>
                         </div>
+                        <!-- Yellow background + main image -->
                         <div class="hero_image-wrap">
                             <img src="./assets/Frame 988.png" alt="" class="hero_image-bg" aria-hidden="true" />
                             <img src="./assets/Images.png" alt="Person using tablet" class="hero_image" />

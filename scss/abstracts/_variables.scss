@@ -1,6 +1,6 @@
-//typography
+// Typography
 $font-base: "Poppins", sans-serif;
-$font-hero-card: "Avenir LT Std", "Avenir", system-ui, sans-serif;
+$font-hero-card: "Avenir LT Std", "Avenir", system-ui, sans-serif; // Hero cards mobile
 $font-sizes: (
     body-sm: clamp(
             1.4rem,
@@ -48,7 +48,7 @@ $background: $white;
 $radius-round: 50%;
 $radius-md: 0.8rem;
 
-$bp-desktop: 992px;
+$bp-desktop: 992px; // Breakpoint: mobile → desktop
 
 // Header icons (mobile)
 $header-icon-size: 2.4rem;
