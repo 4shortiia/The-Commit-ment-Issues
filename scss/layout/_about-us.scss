@@ -1,4 +1,4 @@
-@use "../abstracts/functions" as f;
+// About Us: section-title mixin, cards (Mission, Values, USP), eclipse animation
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
 @use "sass:map";
@@ -21,15 +21,18 @@
     }
 
     &_title {
+        @include m.section-title;
         margin-bottom: 2.6rem;
         text-align: center;
         @include m.section-title;
-        @media (min-width: 992px) {
+
+        @media (min-width: v.$bp-desktop) {
             margin-top: 8rem;
         }
     }
 
     &_subtitle {
+        @include m.section-subtitle(v.$accent-dark);
         text-align: center;
         @include m.section-subtitle($color: v.$accent-dark);
         line-height: 2.8rem;
@@ -56,7 +59,7 @@
     width: 100%;
     flex-direction: column;
 
-    @media (min-width: 992px) {
+    @media (min-width: v.$bp-desktop) {
         & {
             flex-direction: row;
             margin-top: 4rem;
@@ -65,9 +68,9 @@
         }
     }
 
-    &_eclipse {
+        &_eclipse {
         display: none;
-        @media (min-width: 992px) {
+        @media (min-width: v.$bp-desktop) {
             display: block;
             width: 12.9rem;
             height: 12.9rem;
@@ -124,9 +127,9 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
 
-    @media (min-width: 992px) {
-        max-width: 37.1rem;
-        min-height: 27.3rem;
+    @media (min-width: v.$bp-desktop) {
+        width: 37.1rem;
+        height: 27.3rem;
 
         &:hover {
             transform: translateY(-1rem);
@@ -142,12 +145,12 @@
         width: 6rem;
         height: 6rem;
         background-color: v.$primary;
-        border-radius: 50%;
+        border-radius: v.$radius-round;
         display: flex;
         align-items: center;
         justify-content: center;
 
-        @media (min-width: 992px) {
+        @media (min-width: v.$bp-desktop) {
             width: 7rem;
             height: 7rem;
         }
@@ -156,7 +159,7 @@
             width: 1.7rem;
             height: 2.3rem;
 
-            @media (min-width: 992px) {
+            @media (min-width: v.$bp-desktop) {
                 width: 2.3rem;
                 height: 3.3rem;
             }
@@ -176,7 +179,7 @@
             line-height: 1rem;
             color: v.$black;
 
-            @media (min-width: 992px) {
+            @media (min-width: v.$bp-desktop) {
                 font-size: 2.2rem;
                 margin-top: 3rem;
             }
@@ -188,7 +191,7 @@
             line-height: 2.8rem;
             color: v.$accent-dark;
 
-            @media (min-width: 992px) {
+            @media (min-width: v.$bp-desktop) {
                 margin-top: 1.5rem;
             }
         }
