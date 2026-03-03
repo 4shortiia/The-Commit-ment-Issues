@@ -1,6 +1,6 @@
-// Typography
+// ფონტები
 $font-base: "Poppins", sans-serif;
-$font-hero-card: "Avenir LT Std", "Avenir", system-ui, sans-serif; // Hero cards mobile
+$font-hero-card: "Avenir LT Std", "Avenir", system-ui, sans-serif;
 $font-sizes: (
     body-sm: clamp(
             1.4rem,
@@ -31,7 +31,7 @@ $font-weights: (
     bold: 700,
 );
 
-// Colors
+// ფერები
 $white: #ffffff;
 $black: #000000;
 $dark: #1e2a39;
@@ -44,11 +44,11 @@ $text-primary: $black;
 $text-secondary: $accent-secondary;
 $background: $white;
 
-//border radius
+// border radius
 $radius-round: 50%;
 $radius-md: 0.8rem;
 
-$bp-desktop: 992px; // Breakpoint: mobile → desktop
+$bp-desktop: 992px;
 
-// Header icons (mobile)
+// ჰედერის აიკონების ზომა
 $header-icon-size: 2.4rem;
