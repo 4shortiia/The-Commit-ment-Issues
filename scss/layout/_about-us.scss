@@ -6,11 +6,15 @@
 .about-us {
     background-color: var(--theme-section-bg, v.$background);
 
-    @media (min-width: 992px) {
-        margin-left: 3.95rem;
-        margin-right: 3.95rem;
-        max-width: 124rem;
-        margin: 0 auto;
+    .container {
+        background-color: v.$white;
+        padding: 2.4rem 0;
+        border-radius: 1rem;
+        @media (min-width: v.$bp-desktop) {
+            border-radius: 2.9rem;
+            padding-left: 3.2rem;
+            padding-right: 3.2rem;
+        }
     }
 
     &_title {
@@ -49,12 +53,15 @@
 .card-section {
     @include m.flex-center;
     position: relative;
+    width: 100%;
+    flex-direction: column;
 
     @media (min-width: v.$bp-desktop) {
         & {
             flex-direction: row;
             margin-top: 4rem;
             gap: 2.4rem;
+            max-width: 124rem;
         }
     }
 
