@@ -1,0 +1,73 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "sass:map";
+@use "./section";
+
+footer{
+    padding:2.4rem;
+    @media (min-width:v.$bp-desktop){
+        padding: 0 10rem;
+    }
+    .container{
+        padding:0;
+    }
+
+    address, p, a  {
+        color:v.$accent-dark;
+        font-size: 1.6rem;
+        line-height: 2.25;        
+    }
+
+    .footer-top{
+        @include m.flex-center ();
+        gap:2.4rem;
+        @media (min-width:v.$bp-desktop){
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: start;
+            margin-bottom: 4rem;
+        }
+    }
+
+    .footer-logo{
+        color:v.$primary;
+        font-size:2rem;
+        font-weight: map.get(v.$font-weights,medium);
+        @media (min-width:v.$bp-desktop){margin-bottom:0.8rem};
+    }
+
+    .social-icons{
+        @include m.flex-center($direction:row);
+        gap:1.7rem;
+        @media (min-width:v.$bp-desktop){margin-top:0.9rem};
+    }
+
+    .social-icon {
+        width: 3.3rem;
+        height: 3.3rem;
+        border-radius:v.$radius-round;
+        border: 0.05rem solid v.$accent-dark;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .social-icon img {
+            object-fit: contain;
+        }
+
+        .footer-bottom{
+            display:none;
+            @media(min-width: v.$bp-desktop){
+                display: flex;
+                justify-content: center;
+                border-top:0.01rem solid #E4D8D8;
+                padding-top: 2.4rem;
+                margin-bottom:5rem;
+            }
+        }
+
+    
+}
