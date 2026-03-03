@@ -43,7 +43,7 @@
 
     .review-item{
         margin:0 0.5rem;
-        background-color: v.$background;
+        background-color: var(--theme-card-bg, v.$background);
         padding:2.1rem;
         box-shadow: 0.131rem 0.262rem 1.834rem rgba(0,0,0,0.08);
         border-radius: 1rem;
@@ -65,7 +65,7 @@
     }
 
     .reviewer, .review-info {
-        color:v.$text-primary;
+        color: var(--theme-card-text, v.$text-primary);
     }
 
     .review-info {

@@ -1,0 +1,74 @@
+// Dark/Light mode - checkbox + :has()
+
+.theme-toggle {
+    display: none;
+}
+
+// Light mode
+:root {
+    --theme-bg: #ffffff;
+    --theme-text: #000000;
+    --theme-header-bg: #ffffff;
+    --theme-section-bg: #ffffff;
+    --theme-card-bg: #ffffff;
+    --theme-card-text: #1e1e1e;
+    --theme-link: #052a44;
+    --theme-link-hover: #183b56;
+    --theme-footer-border: #071210;
+}
+
+// Dark mode (checkbox checked)
+body:has(.theme-toggle:checked) {
+    --theme-bg: #1e2a39;
+    --theme-text: #f5f5f5;
+    --theme-header-bg: #1e2a39;
+    --theme-section-bg: #1e2a39;
+    --theme-card-bg: #ffffff;
+    --theme-card-text: #1e1e1e;
+    --theme-link: #e8db84;
+    --theme-link-hover: #f0e89c;
+    --theme-footer-border: rgba(255, 255, 255, 0.5);
+}
+
+// Dark mode - აიკონის ხილულობა
+body:has(.theme-toggle:checked) .header_icon--theme img {
+    filter: invert(1);
+}
+
+// Dark mode - სათაურები თეთრი
+body:has(.theme-toggle:checked) .about-us .about-us_title,
+body:has(.theme-toggle:checked) .reviews h2 {
+    color: var(--theme-text);
+}
+
+body:has(.theme-toggle:checked) .about-us .about-us_subtitle,
+body:has(.theme-toggle:checked) .reviews .review-subtitle {
+    color: var(--theme-text);
+}
+
+// Dark mode - Hero ტექსტი თეთრი
+body:has(.theme-toggle:checked) .hero .hero_title,
+body:has(.theme-toggle:checked) .hero .hero_subtitle {
+    color: var(--theme-text);
+}
+
+body {
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+// თემის გადართვის ანიმაცია
+.header,
+.hero,
+.about-us,
+.services,
+.reviews,
+.contact,
+footer {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}

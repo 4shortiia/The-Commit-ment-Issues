@@ -1,10 +1,10 @@
-// About Us: section-title mixin, cards (Mission, Values, USP), eclipse animation
+// About Us - ბარათები (Mission, Values, USP)
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
 @use "sass:map";
 
 .about-us {
-    background-color: v.$background;
+    background-color: var(--theme-section-bg, v.$background);
 
     @media (min-width: 992px) {
         margin-left: 3.95rem;
@@ -96,7 +96,7 @@
     @include m.flex-center($justify: flex-start);
     width: 26.4rem;
     height: 24.3rem;
-    background-color: v.$white;
+    background-color: var(--theme-card-bg, v.$white);
     box-shadow: 0.142rem 0.285rem 2.704rem rgba(0, 0, 0, 0.08);
     border-radius: 1.139rem;
     margin-top: 5.5rem;
@@ -164,7 +164,7 @@
             font-size: map.get(v.$font-sizes, "body");
             font-weight: map.get(v.$font-weights, "semibold");
             line-height: 1rem;
-            color: v.$black;
+            color: var(--theme-card-text, v.$black);
 
             @media (min-width: v.$bp-desktop) {
                 font-size: 2.2rem;
@@ -176,7 +176,7 @@
             font-size: map.get(v.$font-sizes, "body-sm");
             font-weight: map.get(v.$font-weights, "regular");
             line-height: 2.8rem;
-            color: v.$accent-dark;
+            color: var(--theme-card-text, v.$accent-dark);
 
             @media (min-width: v.$bp-desktop) {
                 margin-top: 1.5rem;

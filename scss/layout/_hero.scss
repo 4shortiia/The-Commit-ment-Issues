@@ -1,12 +1,11 @@
-// Hero section: CareerPathNow, CTA, cards, yellow bg + image
-// Mobile-first: 272x500 container, 252x231 media, 61.91x48.15 cards
+// Hero - სათაური, ღილაკები, ბარათები, სურათი
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
 @use "sass:map";
 
 .hero {
     padding: 3.2rem 0;
-    background-color: v.$white;
+    background-color: var(--theme-section-bg, v.$white);
 
     .container {
         display: flex;
@@ -25,7 +24,7 @@
         }
     }
 
-    // Text block: title, subtitle, CTA buttons. 272x245px mobile, gap 14px
+    // ტექსტი + ღილაკები
     &_content {
         order: 1;
         width: 272px;
@@ -58,7 +57,7 @@
         line-height: 28px;
         letter-spacing: 0;
         text-align: center;
-        color: v.$text-primary;
+        color: var(--theme-text, v.$text-primary);
 
         @media (min-width: v.$bp-desktop) {
             font-size: map.get(v.$font-sizes, body);
@@ -84,10 +83,10 @@
         gap: 10px;
         font-size: map.get(v.$font-sizes, body-sm);
         font-weight: map.get(v.$font-weights, semibold);
-        color: v.$primary;
+        color: var(--theme-link, v.$primary);
 
         &:hover {
-            color: v.$accent-secondary;
+            color: var(--theme-link-hover, v.$accent-secondary);
         }
     }
 
@@ -98,14 +97,14 @@
         width: 36px;
         height: 36px;
         padding: 10px 18px 18px 10px;
-        background: #ffffff;
+        background: var(--theme-card-bg, #ffffff);
         box-shadow: 2px -2px 38px 0 rgba(0, 0, 0, 0.08);
         border-radius: 100px;
         font-size: 1.2rem;
         box-sizing: border-box;
     }
 
-    // Media block: cards + yellow bg + person image (252x231 mobile)
+    // ბარათები + სურათი
     &_media {
         order: 2;
         position: relative;
@@ -126,7 +125,6 @@
         }
     }
 
-    // Overlay cards: absolute left on mobile, flex on desktop
     &_cards {
         display: flex;
         flex-direction: column;
@@ -149,11 +147,11 @@
         }
     }
 
-    // Single card: 61.91x48.15px mobile, Avenir typography
+    // ერთი ბარათი
     &_card {
         width: 61.91px;
         height: 48.15px;
-        background-color: v.$white;
+        background-color: var(--theme-card-bg, v.$white);
         border-radius: 6.22px;
         padding: 7.38px 11.66px;
         box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
@@ -177,7 +175,6 @@
         }
     }
 
-    // "Our Happy Users" - 5.54px, weight 700
     &_card_label {
         display: block;
         font-family: v.$font-hero-card;
@@ -186,7 +183,7 @@
         font-style: normal;
         line-height: 5.91px;
         letter-spacing: -0.01em;
-        color: v.$text-primary;
+        color: var(--theme-card-text, v.$text-primary);
 
         .hero_card:first-child & {
             font-weight: 700;
@@ -199,7 +196,6 @@
         }
     }
 
-    // "200+ Online User", "Member Joined" - 4.43px | "27K" -large 5.54px
     &_card_value {
         font-family: v.$font-hero-card;
         font-weight: 350;
@@ -207,7 +203,7 @@
         font-size: 4.43px;
         line-height: 7.38px;
         letter-spacing: 0;
-        color: v.$text-primary;
+        color: var(--theme-card-text, v.$text-primary);
 
         &--large {
             font-size: 5.54px;
@@ -294,7 +290,7 @@
         }
     }
 
-    // Yellow background: Frame 988.png, 217.56x175.42, top 25.8, left 35.26
+    // ყვითელი ფონი
     &_image-bg {
         position: absolute;
         top: 25.8px;
@@ -316,7 +312,7 @@
         }
     }
 
-    // Person with tablet: Images.png, right-bottom aligned
+    // მთავარი სურათი
     &_image {
         position: absolute;
         right: 0;
