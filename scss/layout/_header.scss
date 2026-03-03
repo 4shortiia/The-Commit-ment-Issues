@@ -1,31 +1,78 @@
+// Header: logo, mobile (dark-light + burger), desktop (nav + Sign In + Free Trial)
+// Burger menu: CSS-only toggle via checkbox (#header-menu-toggle)
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
 @use "sass:map";
+
+.header_menu-toggle {
+    display: none;
+}
 
 .header {
     background-color: v.$white;
     padding: 2rem 0;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.05);
+    position: relative;
 
-    .container {
+    .container,
+    &_bar {
         @include m.flex-center(row, space-between, center, left);
-        flex-wrap: wrap;
-        gap: 1.6rem;
+        flex-wrap: nowrap;
     }
 
     &_logo {
-        font-size: map.get(v.$font-sizes, heading);
-        font-weight: map.get(v.$font-weights, bold);
-        color: v.$primary;
         flex-shrink: 0;
+
+        img {
+            display: block;
+            height: 3.2rem;
+            width: auto;
+        }
+    }
+
+    // Mobile: dark-light + burger icons
+    &_icons {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+
+        @media (min-width: v.$bp-desktop) {
+            display: none;
+        }
+    }
+
+    &_icon {
+        padding: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        img {
+            display: block;
+            width: v.$header-icon-size;
+            height: v.$header-icon-size;
+            object-fit: contain;
+        }
+    }
+
+    &_icon--theme {
+        display: block;
+        cursor: default;
+        width: 3.2rem;
+        height: 3.2rem;
+        min-width: 3.2rem;
+        min-height: 3.2rem;
+        object-fit: contain;
+        // თეთრი მთვარე შავ ფონზე - თეთრ ჰედერზე ხილულობისთვის ინვერტირება
+        filter: invert(1);
     }
 
     &_nav {
-        flex: 1;
-        display: flex;
-        justify-content: center;
+        display: none;
 
-        @media (min-width: 992px) {
+        @media (min-width: v.$bp-desktop) {
+            display: flex;
+            flex: 1;
             justify-content: flex-start;
         }
     }
@@ -34,8 +81,6 @@
         display: flex;
         align-items: center;
         gap: 2.4rem;
-        flex-wrap: wrap;
-        justify-content: center;
     }
 
     &_link {
@@ -49,8 +94,106 @@
     }
 
     &_actions {
+        display: none;
+
+        @media (min-width: v.$bp-desktop) {
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+        }
+    }
+
+    // Burger menu overlay (mobile only): 320x778px
+    &_overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 320px;
+        height: 778px;
+        background-color: v.$white;
+        z-index: 1000;
+        flex-direction: column;
+        padding: 2rem;
+
+        @media (min-width: v.$bp-desktop) {
+            display: none !important;
+        }
+    }
+
+    &_overlay-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+    &_icon--close {
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
         display: flex;
         align-items: center;
-        gap: 1.6rem;
+        justify-content: center;
     }
+
+    &_close-icon {
+        position: relative;
+        width: 20px;
+        height: 20px;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 100%;
+            height: 2px;
+            background-color: v.$text-primary;
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+
+    &_overlay-nav {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.4rem;
+    }
+
+    &_overlay-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &_overlay-link {
+        font-size: map.get(v.$font-sizes, body);
+        font-weight: map.get(v.$font-weights, regular);
+        color: v.$text-primary;
+
+        &:hover {
+            color: v.$accent-secondary;
+        }
+    }
+
+    &_overlay-btn {
+        margin-top: 1rem;
+    }
+}
+
+// Checkbox checked = show burger overlay (input and header are siblings in body)
+.header_menu-toggle:checked ~ .header .header_overlay {
+    display: flex;
 }

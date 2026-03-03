@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "./functions" as f;
 @use "./variables" as v;
+@use "sass:map";
 
 @mixin theme($bg-color) {
     background-color: $bg-color;
